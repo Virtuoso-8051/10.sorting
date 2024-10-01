@@ -13,14 +13,15 @@ int main(){
 
     for(int i=0;i<n-1;i++){
         int min=INT_MAX;
-        int j;
-        for(j=i;j<n;j++){
-            if(arr[j]<min){
+        int minidx=-1;
+        for(int j=i;j<n;j++){
+            if(min>arr[j]){
                 min=arr[j];
+                minidx=j;
             }
         }
-            int temp=min;
-            min=arr[i];
+            int temp=arr[minidx];
+            arr[minidx]=arr[i];
             arr[i]=temp;
     }
     printf("sorted array is:");
